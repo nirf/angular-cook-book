@@ -15,6 +15,15 @@ export class ShoppingListService {
 
   addIngredient(ingredient: Ingredient) {
     this.ingredients.push(ingredient)
+    this.notifyIngredientsChanged()
+  }
+
+  addIngredients(ingredients: Ingredient[]) {
+    this.ingredients.push(...ingredients)
+    this.notifyIngredientsChanged()
+  }
+
+  notifyIngredientsChanged() {
     this.ingredientsChanged.emit(this.getIngredients())
   }
 }
