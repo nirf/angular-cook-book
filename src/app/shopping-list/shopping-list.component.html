@@ -8,7 +8,10 @@
         style="cursor: pointer"
         *ngFor="let ingredient of ingredients"
       >
-        {{ ingredient.name }} {{ ingredient.amount }}
+        <app-shopping-list-item
+          [ingredient]="ingredient">
+
+        </app-shopping-list-item>
       </a>
     </ul>
   </div>
